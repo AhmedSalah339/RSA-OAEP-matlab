@@ -18,7 +18,7 @@ The OAEp decrypts the messege and gets the original messege back and saves it in
 
 ## limitations
 
-* The code is slow as the vip takes a big time in calculations.
+* The code is slow as the vpi package takes a big time in calculations.
 
    You can try using one of the alternatives in this post to boost speed: https://www.mathworks.com/matlabcentral/answers/116949-big-integer-speed-vpi-and-symbolic
  
