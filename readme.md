@@ -1,8 +1,8 @@
-# about
+## about
 
 RSA encryption using Optimal Asymmetric Encryption Padding with matlab which encrypts and dycrypts text in a query file.
 
-# dependecies
+## dependecies
 
 you will need only the vpi package: https://www.mathworks.com/matlabcentral/fileexchange/22725-variable-precision-integer-arithmetic
 
@@ -20,7 +20,7 @@ The OAEp decrypts the messege and gets the original messege back and saves it in
 
 * The code is slow as the vip takes a big time in calculations.
 
-You can try using one of the alternatives in this post to boost speed: https://www.mathworks.com/matlabcentral/answers/116949-big-integer-speed-vpi-and-symbolic
+   You can try using one of the alternatives in this post to boost speed: https://www.mathworks.com/matlabcentral/answers/116949-big-integer-speed-vpi-and-symbolic
  
 * The function isprime can be further improved to make the time costly check more fast or to use prior check different than fermat's little theorem that is more percise.
 
