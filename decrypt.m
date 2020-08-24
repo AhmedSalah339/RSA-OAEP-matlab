@@ -1,6 +1,9 @@
 function decrypt(file_name,n,d,n_bits,n_bits2,k0)
 %read the encryption
-fileID = fopen(join([file_name,'_encrypted.txt']),'r');
+name = join([file_name,'_encrypted.txt']);
+
+filepath = fullfile(path, name);
+fileID = fopen(filepath,'r');
 c = fscanf(fileID,'%c');
 fclose(fileID);
 %get the numbers
@@ -32,13 +35,13 @@ dec_mess = join([dec_mess,k]);
 end
 %write the results
 name = join([file_name,'_decrypted.txt']);
-filepath = 'C:\Users\User\Desktop\Discrete\project';
-filepath = fullfile(filepath, name);
-
-[fid, msg] = fopen(filepath,'w');
+filepath = fullfile(path, name);
+disp(filepath);
+[fid, msg] = fopen(filepath,'wt+');
 if fid == -1
   error(['Cannot open file: %s', char(10), '  %s'], filepath, msg);
 end
-fprintf(fileID,'%c',char(dec_mess));
-fclose(fileID);
+disp(dec_mess);
+fprintf(fid,'%s',dec_mess);
+fclose(fid);
 end
