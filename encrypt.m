@@ -1,4 +1,4 @@
-function n_bits = encrypt(file_name,n,e,k0)
+function n_bits = encrypt(path,file_name,n,e,k0)
 % read the messege
 fileID = fopen(join([file_name,'.txt']),'r');
 M = fscanf(fileID,'%c');
@@ -32,14 +32,15 @@ end
 
 %write the results
 name = join([file_name,'_encrypted.txt']);
-filepath = 'C:\Users\User\Desktop\Discrete\project';
-filepath = fullfile(filepath, name);
+
+filepath = fullfile(path, name);
 
 [fid, msg] = fopen(filepath,'w');
+disp(filepath);
 if fid == -1
   error(['Cannot open file: %s', char(10), '  %s'], filepath, msg);
 end
 
-fprintf(fileID,'%c',C);
-fclose(fileID);
+fprintf(fid,'%c',C);
+fclose(fid);
 end
