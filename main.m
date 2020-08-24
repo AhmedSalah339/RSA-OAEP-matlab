@@ -1,5 +1,16 @@
 clc;
 clear;
+path = matlab.desktop.editor.getActiveFilename;
+path = path(1:length(path)-7);
+path1 = join([path ,'/RSA']);
+path2 = join([path ,'/OAEP']);
+path3 = join([path ,'/Helper functions']);
+%path4 = join([path ,'/VariablePrecisionIntegers/VariablePrecisionIntegers']);
+
+addpath(path1); 
+addpath(path2); 
+addpath(path3); 
+%addpath(path4); 
 %number of p or q bits (must be bigger than 8)
 n_bits_orig =19;
 %k0 must be divisible by 8 because it is used to generate a rondom string
@@ -26,12 +37,12 @@ end
 
 %encryption
 disp('Start encryption...');
-n_bits = encrypt(file_name,n,e,k0);
+n_bits = encrypt(path,file_name,n,e,k0);
 disp('done ');
 %dycreption
 
 disp('Start decryption... ');
-decrypt(file_name,n,d,n_bits,n_bits,k0);
+decrypt(path,file_name,n,d,n_bits,n_bits,k0);
 fprintf('decrypted');
 
 
